@@ -15,9 +15,12 @@ browser selection
 
 
 base on testcase
+
 parallel
 => Typescript
 => Tạo base example Playwright
+
+
 Research: 
 - Dùng cái gì để control browser
 
@@ -31,6 +34,8 @@ dùng browser
 - Ưu nhược điểm so với các tool đã từng làm (Nhanh hay chậm như thế nào? Support như thế nào?)
 - Typescript => Tạo example
 + Bất đồng bộ (Async & Await)
+-> async: đánh dấu function sẽ dùng await bên trong
+-> await: để đảm bảo hành động được hoàn thành rồi mới thực hiện hành động tiếp theo.
 + Data Object
 
 
