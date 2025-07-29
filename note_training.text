@@ -1,0 +1,44 @@
+
+1: 
+headless
+non headless
+
+-> Edit trong "playwright.config" - user
+
+
+
+2.
+browser selection
+
+
+
+
+
+base on testcase
+parallel
+=> Typescript
+=> Tạo base example Playwright
+Research: 
+- Dùng cái gì để control browser
+
+dùng browser
+
+-> browser -> context -> page.goto ....
+
+
+
+- Cách tương tác các control
+- Ưu nhược điểm so với các tool đã từng làm (Nhanh hay chậm như thế nào? Support như thế nào?)
+- Typescript => Tạo example
++ Bất đồng bộ (Async & Await)
++ Data Object
+
+
+
+| Tính chất         | Mục đích sử dụng trong test tự động hóa                          |
+| ----------------- | ---------------------------------------------------------------- |
+| `visible`         | Kiểm tra UI có đang hiển thị đúng, sẵn sàng để thao tác không    |
+| `enabled`         | Kiểm tra chức năng có bị khoá không (ví dụ khi form chưa hợp lệ) |
+| `editable`        | Kiểm tra trường input có cho nhập không                          |
+| `stable`          | Đảm bảo click/hover/fill vào phần tử đang ổn định trên UI        |
+| `receives events` | Tránh bị lớp khác che mất nút cần click                          |
