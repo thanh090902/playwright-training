@@ -8,21 +8,21 @@ non headless
 
 
 2.
-browser selection
+* browser selection
 
 
 
 
 
-base on testcase
+* base on testcase
 
-parallel
+* parallel
 => Typescript
 => Tạo base example Playwright
 
 
 Research: 
-- Dùng cái gì để control browser
+* Dùng cái gì để control browser
 
 dùng browser
 
@@ -30,13 +30,46 @@ dùng browser
 
 
 
-- Cách tương tác các control
-- Ưu nhược điểm so với các tool đã từng làm (Nhanh hay chậm như thế nào? Support như thế nào?)
-- Typescript => Tạo example
-+ Bất đồng bộ (Async & Await)
+* Cách tương tác các control
+
+
+  await page.goto('https://demo.automationtesting.in/Register.html');
+
+  // Text input
+  await page.fill('input[placeholder="First Name"]', 'Nguyen');
+
+  // Radio
+  await page.check('input[value="Male"]');
+
+  // Checkbox
+  await page.check('input[type="checkbox"][value="Movies"]');
+
+  // Dropdown
+  await page.selectOption('#Skills', 'Java');
+
+  // Date picker
+  await page.fill('#datepicker', '08/01/2025');
+
+  // Upload file
+  await page.setInputFiles('#imagesrc', 'tests/data/avatar.jpg');
+
+  // Textarea
+  await page.fill('textarea', 'Đây là phần mô tả dài...');
+
+  // Click button
+  await page.click('#submitbtn');
+
+
+
+* Ưu nhược điểm so với các tool đã từng làm (Nhanh hay chậm như thế nào? Support như thế nào?)
+* Typescript => Tạo example
+
+
+* Bất đồng bộ (Async & Await)
 -> async: đánh dấu function sẽ dùng await bên trong
 -> await: để đảm bảo hành động được hoàn thành rồi mới thực hiện hành động tiếp theo.
-+ Data Object
+
+* Data Object
 
 
 
@@ -47,3 +80,23 @@ dùng browser
 | `editable`        | Kiểm tra trường input có cho nhập không                          |
 | `stable`          | Đảm bảo click/hover/fill vào phần tử đang ổn định trên UI        |
 | `receives events` | Tránh bị lớp khác che mất nút cần click                          |
+
+
+Iframe
+- await page.frameLocator('#singleframe').locator('input').fill('Playwright');
+
+
+
+
+
+
+
+
+
+| Giá trị              | Ý nghĩa                                                                |
+| -------------------- | ---------------------------------------------------------------------- |
+| `"load"`             | Đợi đến khi sự kiện `load` của trang được kích hoạt (window\.onload)   |
+| `"domcontentloaded"` | Đợi đến khi DOM được load xong (document.readyState === "interactive") |
+| `"networkidle"`      | Đợi đến khi **không còn request mạng nào đang mở trong 500ms**         |
+| `"commit"`           | Đợi khi điều hướng bắt đầu (ít được dùng)                              |
+
